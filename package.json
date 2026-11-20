@@ -1,0 +1,24 @@
+{
+  "name": "paylock-qday",
+  "version": "0.1.0",
+  "description": "PayLock: Milestone-based stablecoin escrow with ERC-8004 identity, reputation, and AI arbiter dispute resolution on QDay Aevum",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "clean": "hardhat clean",
+    "deploy:aevum": "hardhat run scripts/deploy.ts --network aevum"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox-viem": "^5.0.7",
+    "@types/node": "^26.6.6",
+    "dotenv": "^18.0.10",
+    "hardhat": "^3.22.0",
+    "typescript": "^7.0.2",
+    "viem": "^2.58.2"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.6.1"
+  }
+}
