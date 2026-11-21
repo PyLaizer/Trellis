@@ -1,6 +1,6 @@
 # Trellis — Progress Tracker
 
-## Overall Status: 🟢 Stage 2A Complete (`feat/stage-2a-frontend-scaffold`) — Ready for User Review & Stage 2B Scope Review
+## Overall Status: 🟢 Stage 2A Merged into `main` — Ready for Stage 2B (`/identity`) & Aevum Testnet Deploy
 
 ---
 
@@ -53,7 +53,7 @@
 - [x] wagmi / viem / RainbowKit configured for QDay Aevum Testnet (`44005`)
 - [x] Quantum Lattice Dark shell: Navbar (inline SVG logo, sliding `layoutId` pills, live `tUSD8`/`tQDAY` balances), Footer, interactive motion Dashboard (`/`) matching `Trellis Escrow Dashboard 2`, and 4 route shells (`/identity`, `/projects`, `/disputes`, `/reputation`)
 - [x] Verified clean production `npm run build` (0 TypeScript/lint errors)
-- **Status:** ✅ Complete (on branch `feat/stage-2a-frontend-scaffold`)
+- **Status:** ✅ Complete & merged into `main` (Copper & Ice theme applied)
 
 ### Stage 2B: Identity & Profiles
 - [ ] Registration page (mint identity NFT)
