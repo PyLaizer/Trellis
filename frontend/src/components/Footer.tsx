@@ -18,13 +18,13 @@ export function Footer() {
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5">
           <Link
             href="/projects"
-            className="transition-colors hover:text-emerald-400"
+            className="transition-colors hover:text-copper-400"
           >
             Smart Contracts
           </Link>
           <Link
             href="/disputes"
-            className="transition-colors hover:text-cyan-400"
+            className="transition-colors hover:text-copper-400"
           >
             Arbiter Consensus
           </Link>
@@ -32,11 +32,11 @@ export function Footer() {
             href={AEVUM_EXPLORER_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-emerald-400"
+            className="transition-colors hover:text-copper-400"
           >
             Aevum Explorer
           </a>
-          <span className="rounded-md border border-hairline bg-surface px-2 py-0.5 font-mono text-[10px] tracking-wider text-cyan-400">
+          <span className="rounded-md border border-hairline bg-surface px-2 py-0.5 font-mono text-[10px] tracking-wider text-ice-400">
             AEVUM-TESTNET
           </span>
         </div>

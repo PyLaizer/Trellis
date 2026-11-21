@@ -6,11 +6,11 @@ export default function IdentityPage() {
     <div className="mx-auto max-w-[1400px] px-4 pt-10 sm:px-6 lg:px-8">
       <div className="lattice-bg rounded-2xl border border-hairline bg-surface p-8 sm:p-10">
         <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-500/30 bg-cyan-500/10">
-            <Fingerprint className="h-5 w-5 text-cyan-400" />
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-ice/30 bg-ice/10">
+            <Fingerprint className="h-5 w-5 text-ice-400" />
           </div>
           <div>
-            <span className="font-mono text-[11px] uppercase tracking-wider text-cyan-400">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-ice-400">
               ERC-8004 Identity Registry • Stage 2B
             </span>
             <h1 className="font-display text-2xl font-bold text-slate-50">
@@ -31,7 +31,7 @@ export default function IdentityPage() {
           </span>
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-hairline bg-elevated px-3.5 py-1.5 text-xs font-medium text-slate-200 transition-colors hover:border-emerald-500/40 hover:text-emerald-400"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-hairline bg-elevated px-3.5 py-1.5 text-xs font-medium text-slate-200 transition-colors hover:border-copper/40 hover:text-copper-400"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             Back to Dashboard

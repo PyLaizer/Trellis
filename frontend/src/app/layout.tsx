@@ -43,7 +43,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       lang="en"
       className={`dark ${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="flex min-h-screen flex-col bg-canvas font-sans text-slate-50 antialiased selection:bg-emerald-500/30 selection:text-emerald-200">
+      <body className="flex min-h-screen flex-col bg-canvas font-sans text-slate-50 antialiased selection:bg-copper/30 selection:text-copper-400">
         <Providers>
           <Navbar />
           <main className="flex-1">{children}</main>

@@ -82,26 +82,26 @@ const cardItem = {
 function ProjectIcon({ kind }: { kind: DashboardProject["icon"] }) {
   switch (kind) {
     case "shield":
-      return <Shield className="h-4 w-4 text-emerald-400" />;
+      return <Shield className="h-4 w-4 text-copper-400" />;
     case "cpu":
-      return <Cpu className="h-4 w-4 text-cyan-400" />;
+      return <Cpu className="h-4 w-4 text-ice-400" />;
     case "layout":
-      return <LayoutGrid className="h-4 w-4 text-emerald-400" />;
+      return <LayoutGrid className="h-4 w-4 text-copper-400" />;
     case "database":
-      return <Database className="h-4 w-4 text-cyan-400" />;
+      return <Database className="h-4 w-4 text-ice-400" />;
   }
 }
 
 function StatusPill({ status }: { status: ProjectStatus }) {
   const styles: Record<ProjectStatus, string> = {
     ACTIVE:
-      "border-emerald-500/30 bg-emerald-500/10 text-emerald-400",
+      "border-copper/30 bg-copper/15 text-copper-400",
     DISPUTED:
-      "border-rose-500/30 bg-rose-500/10 text-rose-400",
+      "border-rose-500/30 bg-rose-500/15 text-rose-400",
     OPEN:
-      "border-cyan-500/30 bg-cyan-500/10 text-cyan-400",
+      "border-amber-500/30 bg-amber-500/15 text-amber-400",
     COMPLETED:
-      "border-slate-600/50 bg-slate-800/70 text-slate-300",
+      "border-teal-500/30 bg-teal-500/15 text-teal-400",
   };
 
   return (
@@ -117,10 +117,12 @@ function MilestoneSegmentBar({
   segments,
   completedCount,
   totalCount,
+  isCompletedProject,
 }: {
   segments: MilestoneSegmentState[];
   completedCount: number;
   totalCount: number;
+  isCompletedProject: boolean;
 }) {
   return (
     <div className="flex flex-col gap-1.5">
@@ -133,7 +135,9 @@ function MilestoneSegmentBar({
         {segments.map((seg, idx) => {
           const barColor =
             seg === "approved"
-              ? "bg-emerald-500"
+              ? isCompletedProject
+                ? "bg-teal-400"
+                : "bg-copper"
               : seg === "disputed"
               ? "bg-rose-500"
               : "bg-slate-700/80";
@@ -168,7 +172,7 @@ export function DashboardClient() {
   // Cursor-tracking radial spotlight for Hero Card
   const mouseX = useMotionValue(320);
   const mouseY = useMotionValue(120);
-  const spotlightBackground = useMotionTemplate`radial-gradient(460px circle at ${mouseX}px ${mouseY}px, rgba(16, 185, 129, 0.14), rgba(34, 211, 238, 0.06) 42%, transparent 72%)`;
+  const spotlightBackground = useMotionTemplate`radial-gradient(460px circle at ${mouseX}px ${mouseY}px, rgba(234, 122, 61, 0.14), rgba(56, 189, 248, 0.08) 42%, transparent 72%)`;
 
   function handleHeroMouseMove(event: MouseEvent<HTMLElement>) {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -241,7 +245,7 @@ export function DashboardClient() {
         <div className="relative z-10 flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
           <div className="max-w-2xl space-y-3.5">
             <div className="flex flex-wrap items-center gap-2.5">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 font-mono text-[11px] font-medium tracking-wider text-cyan-400">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-ice/25 bg-ice/10 px-3 py-1 font-mono text-[11px] font-medium tracking-wider text-ice-400">
                 <Sparkles className="h-3 w-3" />
                 ERC-8004 TRUSTLESS AGENTS • QDAY POST-QUANTUM L2
               </span>
@@ -255,7 +259,8 @@ export function DashboardClient() {
             </div>
 
             <h1 className="font-display text-3xl font-bold tracking-tight text-slate-50 sm:text-4xl">
-              Quantum-Safe Milestone Escrow with AI Arbitration
+              Quantum-Safe Milestone Escrow with{" "}
+              <span className="text-copper">AI Arbitration</span>
             </h1>
 
             <p className="text-sm leading-relaxed text-slate-400 sm:text-base">
@@ -270,7 +275,7 @@ export function DashboardClient() {
             <motion.div whileHover={{ y: -1 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-canvas shadow-[0_0_24px_rgba(16,185,129,0.28)] transition-colors hover:bg-emerald-400"
+                className="inline-flex items-center gap-2 rounded-xl bg-copper px-5 py-3 text-sm font-semibold text-canvas shadow-[0_0_24px_rgba(234,122,61,0.28)] transition-colors hover:bg-copper-600"
               >
                 <Plus className="h-4 w-4" />
                 Create Escrow Project
@@ -280,9 +285,9 @@ export function DashboardClient() {
             <motion.div whileHover={{ y: -1 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href="/identity"
-                className="inline-flex items-center gap-2 rounded-xl border border-hairline bg-elevated/80 px-5 py-3 text-sm font-semibold text-slate-100 transition-colors hover:border-cyan-400/50 hover:bg-elevated"
+                className="inline-flex items-center gap-2 rounded-xl border border-hairline bg-elevated/80 px-5 py-3 text-sm font-semibold text-slate-100 transition-colors hover:border-ice/50 hover:bg-elevated"
               >
-                <Fingerprint className="h-4 w-4 text-cyan-400" />
+                <Fingerprint className="h-4 w-4 text-ice-400" />
                 Mint ERC-8004 Passport
               </Link>
             </motion.div>
@@ -301,13 +306,13 @@ export function DashboardClient() {
         <motion.div
           variants={cardItem}
           whileHover={{ y: -2 }}
-          className="rounded-xl border border-hairline bg-surface p-5 transition-shadow duration-200 hover:border-emerald-500/35 hover:shadow-card-glow"
+          className="rounded-xl border border-hairline bg-surface p-5 transition-shadow duration-200 hover:border-copper/35 hover:shadow-card-glow"
         >
           <div className="flex items-center justify-between">
             <span className="font-mono text-[11px] font-medium tracking-wider text-slate-400">
               TOTAL VALUE ESCROWED
             </span>
-            <Lock className="h-4 w-4 text-emerald-400" />
+            <Lock className="h-4 w-4 text-copper-400" />
           </div>
           <div className="mt-3 flex items-baseline gap-2">
             <AnimatedNumber
@@ -318,7 +323,7 @@ export function DashboardClient() {
             />
             <span className="font-mono text-xs text-slate-400">tUSD8</span>
           </div>
-          <p className="mt-2 font-mono text-xs text-emerald-400">
+          <p className="mt-2 font-mono text-xs text-teal-400">
             {MOCK_KPI_SNAPSHOT.tvlDeltaLabel}
           </p>
         </motion.div>
@@ -327,13 +332,13 @@ export function DashboardClient() {
         <motion.div
           variants={cardItem}
           whileHover={{ y: -2 }}
-          className="rounded-xl border border-hairline bg-surface p-5 transition-shadow duration-200 hover:border-emerald-500/35 hover:shadow-card-glow"
+          className="rounded-xl border border-hairline bg-surface p-5 transition-shadow duration-200 hover:border-copper/35 hover:shadow-card-glow"
         >
           <div className="flex items-center justify-between">
             <span className="font-mono text-[11px] font-medium tracking-wider text-slate-400">
               ACTIVE PROJECTS
             </span>
-            <LayoutGrid className="h-4 w-4 text-cyan-400" />
+            <LayoutGrid className="h-4 w-4 text-copper-400" />
           </div>
           <div className="mt-3 flex items-baseline gap-2">
             <AnimatedNumber
@@ -354,13 +359,13 @@ export function DashboardClient() {
         <motion.div
           variants={cardItem}
           whileHover={{ y: -2 }}
-          className="rounded-xl border border-hairline bg-surface p-5 transition-shadow duration-200 hover:border-cyan-400/40 hover:shadow-cyan-glow"
+          className="rounded-xl border border-hairline bg-surface p-5 transition-shadow duration-200 hover:border-ice/40 hover:shadow-ice-glow"
         >
           <div className="flex items-center justify-between">
             <span className="font-mono text-[11px] font-medium tracking-wider text-slate-400">
               ACTIVE AI ARBITERS
             </span>
-            <Scale className="h-4 w-4 text-cyan-400" />
+            <Scale className="h-4 w-4 text-ice-400" />
           </div>
           <div className="mt-3 flex items-baseline gap-2">
             <AnimatedNumber
@@ -373,7 +378,7 @@ export function DashboardClient() {
             </span>
           </div>
           <div className="mt-2">
-            <span className="inline-flex items-center rounded-md border border-cyan-500/30 bg-cyan-500/10 px-2 py-0.5 font-mono text-[11px] text-cyan-400">
+            <span className="inline-flex items-center rounded-md border border-ice/30 bg-ice/10 px-2 py-0.5 font-mono text-[11px] text-ice-400">
               {MOCK_KPI_SNAPSHOT.quorumLabel}
             </span>
           </div>
@@ -383,13 +388,13 @@ export function DashboardClient() {
         <motion.div
           variants={cardItem}
           whileHover={{ y: -2 }}
-          className="rounded-xl border border-hairline bg-surface p-5 transition-shadow duration-200 hover:border-emerald-500/35 hover:shadow-card-glow"
+          className="rounded-xl border border-hairline bg-surface p-5 transition-shadow duration-200 hover:border-copper/35 hover:shadow-card-glow"
         >
           <div className="flex items-center justify-between">
             <span className="font-mono text-[11px] font-medium tracking-wider text-slate-400">
               PROTOCOL FEE
             </span>
-            <ShieldCheck className="h-4 w-4 text-emerald-400" />
+            <ShieldCheck className="h-4 w-4 text-copper-400" />
           </div>
           <div className="mt-3 flex items-baseline gap-2">
             <AnimatedNumber
@@ -438,7 +443,7 @@ export function DashboardClient() {
                       onClick={() => setActiveFilter(tab.id)}
                       className={`relative rounded-lg px-3 py-1 text-xs font-medium transition-colors ${
                         isActive
-                          ? "text-slate-50"
+                          ? "text-copper-400"
                           : "text-slate-400 hover:text-slate-200"
                       }`}
                     >
@@ -450,7 +455,7 @@ export function DashboardClient() {
                             stiffness: 440,
                             damping: 32,
                           }}
-                          className="absolute inset-0 rounded-lg border border-emerald-500/30 bg-elevated"
+                          className="absolute inset-0 rounded-lg border border-copper/35 bg-copper/15"
                         />
                       )}
                       <span className="relative z-10">{tab.label}</span>
@@ -486,18 +491,18 @@ export function DashboardClient() {
                     >
                       {/* Project Icon + Title + ID + Client */}
                       <div className="flex items-start gap-3 sm:col-span-5">
-                        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-hairline bg-elevated/80 transition-colors group-hover:border-emerald-500/35">
+                        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-hairline bg-elevated/80 transition-colors group-hover:border-copper/35">
                           <ProjectIcon kind={project.icon} />
                         </div>
                         <div className="min-w-0">
                           <div className="flex items-center gap-1.5">
-                            <span className="truncate font-display text-sm font-semibold text-slate-100 group-hover:text-emerald-400">
+                            <span className="truncate font-display text-sm font-semibold text-slate-100 group-hover:text-copper-400">
                               {project.title}
                             </span>
                             <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-slate-500 opacity-0 transition-opacity group-hover:opacity-100" />
                           </div>
                           <div className="mt-0.5 flex items-center gap-2 font-mono text-[11px] tabular-nums text-slate-400">
-                            <span className="text-cyan-400">{project.id}</span>
+                            <span className="text-ice-400">{project.id}</span>
                             <span className="text-slate-600">•</span>
                             <span>{shortenAddress(project.clientAddress)}</span>
                           </div>
@@ -510,6 +515,7 @@ export function DashboardClient() {
                           segments={project.milestones}
                           completedCount={project.completedCount}
                           totalCount={project.totalCount}
+                          isCompletedProject={project.status === "COMPLETED"}
                         />
                       </div>
 
@@ -543,8 +549,8 @@ export function DashboardClient() {
           {/* Post-Quantum Dilithium-3 Consensus Status Card */}
           <div className="flex flex-col justify-between gap-4 rounded-2xl border border-hairline bg-surface p-5 sm:flex-row sm:items-center sm:px-6">
             <div className="flex items-start gap-3.5">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-emerald-500/30 bg-emerald-500/10">
-                <ShieldCheck className="h-5 w-5 text-emerald-400" />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-ice/30 bg-ice/10">
+                <ShieldCheck className="h-5 w-5 text-ice-400" />
               </div>
               <div>
                 <h3 className="font-display text-sm font-semibold text-slate-100">
@@ -557,10 +563,10 @@ export function DashboardClient() {
               </div>
             </div>
 
-            <div className="inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-emerald-500/35 bg-emerald-500/10 px-3 py-1.5 font-mono text-[11px] font-semibold tracking-wider text-emerald-400 sm:self-auto">
+            <div className="inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-teal-500/35 bg-teal-500/10 px-3 py-1.5 font-mono text-[11px] font-semibold tracking-wider text-teal-400 sm:self-auto">
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-500" />
               </span>
               LATTICE-SYNCED
             </div>
@@ -577,7 +583,7 @@ export function DashboardClient() {
               </h2>
               <Link
                 href="/identity"
-                className="font-mono text-xs font-medium text-emerald-400 transition-colors hover:text-emerald-300"
+                className="font-mono text-xs font-medium text-copper-400 transition-colors hover:text-copper"
               >
                 + Mint New Identity
               </Link>
@@ -588,16 +594,26 @@ export function DashboardClient() {
                 <Link
                   key={passport.tokenId}
                   href="/identity"
-                  className="group block rounded-xl border border-hairline bg-elevated/55 p-4 transition-all duration-200 hover:border-cyan-400/45 hover:bg-elevated hover:shadow-cyan-glow"
+                  className={`group block rounded-xl border border-hairline bg-elevated/55 p-4 transition-all duration-200 hover:bg-elevated ${
+                    passport.isActiveArbiter
+                      ? "hover:border-ice/45 hover:shadow-ice-glow"
+                      : "hover:border-copper/45 hover:shadow-card-glow"
+                  }`}
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex items-center gap-2.5">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-hairline bg-surface">
+                      <div
+                        className={`flex h-8 w-8 items-center justify-center rounded-lg border ${
+                          passport.isActiveArbiter
+                            ? "border-ice/30 bg-ice/10"
+                            : "border-copper/30 bg-copper/10"
+                        }`}
+                      >
                         <Fingerprint
                           className={`h-4 w-4 ${
                             passport.isActiveArbiter
-                              ? "text-cyan-400"
-                              : "text-emerald-400"
+                              ? "text-ice-400"
+                              : "text-copper-400"
                           }`}
                         />
                       </div>
@@ -614,8 +630,8 @@ export function DashboardClient() {
                     <span
                       className={`rounded-md border px-2 py-0.5 font-mono text-[10px] font-semibold tracking-wider ${
                         passport.isActiveArbiter
-                          ? "border-cyan-500/35 bg-cyan-500/10 text-cyan-400"
-                          : "border-emerald-500/30 bg-emerald-500/10 text-emerald-400"
+                          ? "border-ice/35 bg-ice/10 text-ice-400"
+                          : "border-copper/30 bg-copper/15 text-copper-400"
                       }`}
                     >
                       {passport.badge}
@@ -632,8 +648,8 @@ export function DashboardClient() {
                           style={{ width: `${passport.trustScore}%` }}
                           className={`h-full rounded-full ${
                             passport.isActiveArbiter
-                              ? "bg-cyan-400"
-                              : "bg-emerald-500"
+                              ? "bg-ice-400"
+                              : "bg-copper"
                           }`}
                         />
                       </div>
@@ -653,10 +669,10 @@ export function DashboardClient() {
               <h2 className="font-display text-base font-semibold text-slate-50">
                 Live Arbitration Feed
               </h2>
-              <div className="inline-flex items-center gap-1.5 font-mono text-[11px] text-emerald-400">
+              <div className="inline-flex items-center gap-1.5 font-mono text-[11px] text-ice-400">
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ice-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-ice-500" />
                 </span>
                 Real-Time
               </div>
@@ -673,8 +689,8 @@ export function DashboardClient() {
                   event.type === "approved"
                     ? {
                         Icon: CheckCircle2,
-                        color: "text-emerald-400",
-                        bg: "bg-emerald-500/10 border-emerald-500/25",
+                        color: "text-copper-400",
+                        bg: "bg-copper/10 border-copper/25",
                       }
                     : event.type === "disputed"
                     ? {
@@ -684,8 +700,8 @@ export function DashboardClient() {
                       }
                     : {
                         Icon: ShieldCheck,
-                        color: "text-cyan-400",
-                        bg: "bg-cyan-500/10 border-cyan-500/25",
+                        color: "text-ice-400",
+                        bg: "bg-ice/10 border-ice/25",
                       };
 
                 const EventIcon = iconConfig.Icon;
@@ -712,14 +728,24 @@ export function DashboardClient() {
                           </span>
                         </div>
                         <p className="mt-1 text-xs leading-relaxed text-slate-400">
-                          {event.detail}
+                          {event.type === "approved" ? (
+                            <>
+                              Released{" "}
+                              <span className="font-mono font-medium text-copper-400">
+                                +990.00 tUSD8
+                              </span>{" "}
+                              for #TRL-104 DeFi Vault Audit
+                            </>
+                          ) : (
+                            event.detail
+                          )}
                         </p>
                         <div className="mt-2">
                           <a
                             href={explorerTxUrl(event.txHash)}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 rounded-md border border-hairline bg-canvas/70 px-2 py-0.5 font-mono text-[10px] tabular-nums text-slate-300 transition-colors hover:border-cyan-400/40 hover:text-cyan-400"
+                            className="inline-flex items-center gap-1 rounded-md border border-hairline bg-canvas/70 px-2 py-0.5 font-mono text-[10px] tabular-nums text-slate-300 transition-colors hover:border-ice/40 hover:text-ice-400"
                           >
                             {shortenHash(event.txHash)}
                             <ArrowUpRight className="h-2.5 w-2.5" />
@@ -738,7 +764,7 @@ export function DashboardClient() {
                 <span className="text-slate-500">L2 Block</span>
                 <span className="text-slate-200">#1,842,910</span>
               </div>
-              <span className="text-cyan-400">Aevum Testnet (44005)</span>
+              <span className="text-ice-400">Aevum Testnet (44005)</span>
             </div>
           </div>
         </div>

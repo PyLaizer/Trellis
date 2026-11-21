@@ -5,7 +5,7 @@ interface TrellisLogoProps extends SVGProps<SVGSVGElement> {
 }
 
 /**
- * Crisp geometric quantum-lattice emblem in Emerald (#10B981) & Cyan (#22D3EE).
+ * Crisp geometric quantum-lattice emblem in Burnished Copper (#EA7A3D) & Ice Blue (#38BDF8).
  */
 export function TrellisLogo({ size = 32, className, ...props }: TrellisLogoProps) {
   return (
@@ -28,8 +28,8 @@ export function TrellisLogo({ size = 32, className, ...props }: TrellisLogoProps
           y2="32"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0%" stopColor="#10B981" />
-          <stop offset="100%" stopColor="#22D3EE" />
+          <stop offset="0%" stopColor="#EA7A3D" />
+          <stop offset="100%" stopColor="#38BDF8" />
         </linearGradient>
         <linearGradient
           id="trellis-bg-grad"
@@ -39,8 +39,8 @@ export function TrellisLogo({ size = 32, className, ...props }: TrellisLogoProps
           y2="36"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0%" stopColor="#10B981" stopOpacity="0.16" />
-          <stop offset="100%" stopColor="#22D3EE" stopOpacity="0.06" />
+          <stop offset="0%" stopColor="#EA7A3D" stopOpacity="0.16" />
+          <stop offset="100%" stopColor="#38BDF8" stopOpacity="0.06" />
         </linearGradient>
       </defs>
 
@@ -68,7 +68,7 @@ export function TrellisLogo({ size = 32, className, ...props }: TrellisLogoProps
       {/* Inner trellis cross-struts */}
       <path
         d="M12.25 12.25L23.75 23.75M23.75 12.25L12.25 23.75"
-        stroke="#22D3EE"
+        stroke="#38BDF8"
         strokeOpacity="0.7"
         strokeWidth="1.3"
         strokeLinecap="round"
@@ -82,14 +82,14 @@ export function TrellisLogo({ size = 32, className, ...props }: TrellisLogoProps
         height="5.6"
         rx="1.2"
         transform="rotate(45 18 18)"
-        fill="#10B981"
+        fill="#EA7A3D"
       />
 
       {/* Lattice corner nodes */}
-      <circle cx="18" cy="6.5" r="1.75" fill="#34D399" />
-      <circle cx="29.5" cy="18" r="1.75" fill="#22D3EE" />
-      <circle cx="18" cy="29.5" r="1.75" fill="#22D3EE" />
-      <circle cx="6.5" cy="18" r="1.75" fill="#34D399" />
+      <circle cx="18" cy="6.5" r="1.75" fill="#F2945E" />
+      <circle cx="29.5" cy="18" r="1.75" fill="#38BDF8" />
+      <circle cx="18" cy="29.5" r="1.75" fill="#38BDF8" />
+      <circle cx="6.5" cy="18" r="1.75" fill="#F2945E" />
     </svg>
   );
 }

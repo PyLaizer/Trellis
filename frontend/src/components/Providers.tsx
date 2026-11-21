@@ -13,8 +13,8 @@ interface ProvidersProps {
 }
 
 const trellisRainbowTheme = darkTheme({
-  accentColor: "#10B981",
-  accentColorForeground: "#070B12",
+  accentColor: "#EA7A3D",
+  accentColorForeground: "#080A0F",
   borderRadius: "medium",
   overlayBlur: "small",
 });

@@ -77,10 +77,10 @@ export function Navbar() {
             </span>
           </Link>
 
-          <div className="hidden items-center gap-1.5 rounded-full border border-hairline bg-surface px-2.5 py-1 font-mono text-[11px] font-medium tracking-wider text-emerald-400 sm:inline-flex">
+          <div className="hidden items-center gap-1.5 rounded-full border border-hairline bg-surface px-2.5 py-1 font-mono text-[11px] font-medium tracking-wider text-ice-400 sm:inline-flex">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ice-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-ice-500" />
             </span>
             AEVUM TESTNET
           </div>
@@ -103,7 +103,7 @@ export function Navbar() {
                 href={item.href}
                 className={`relative rounded-lg px-3.5 py-1.5 text-sm font-medium transition-colors ${
                   isActive
-                    ? "text-slate-50"
+                    ? "text-copper-400"
                     : "text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -115,7 +115,7 @@ export function Navbar() {
                       stiffness: 420,
                       damping: 32,
                     }}
-                    className="absolute inset-0 -z-10 rounded-lg border border-emerald-500/30 bg-elevated shadow-[0_0_16px_rgba(16,185,129,0.12)]"
+                    className="absolute inset-0 -z-10 rounded-lg border border-copper/35 bg-copper/15 shadow-[0_0_16px_rgba(234,122,61,0.14)]"
                   />
                 )}
                 {item.label}
@@ -128,9 +128,9 @@ export function Navbar() {
         <div className="flex items-center gap-2.5">
           {isOnAevum && (
             <div className="hidden items-center gap-2 rounded-xl border border-hairline bg-surface px-3 py-1.5 font-mono text-xs tabular-nums xl:flex">
-              <span className="text-emerald-400">{formattedTusd8} tUSD8</span>
+              <span className="text-copper-400">{formattedTusd8} tUSD8</span>
               <span className="h-3 w-px bg-hairline" aria-hidden="true" />
-              <span className="text-slate-300">{formattedNative} tQDAY</span>
+              <span className="text-ice-400">{formattedNative} tQDAY</span>
             </div>
           )}
 

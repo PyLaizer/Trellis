@@ -31,7 +31,7 @@ export default function DisputesPage() {
           </span>
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-hairline bg-elevated px-3.5 py-1.5 text-xs font-medium text-slate-200 transition-colors hover:border-emerald-500/40 hover:text-emerald-400"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-hairline bg-elevated px-3.5 py-1.5 text-xs font-medium text-slate-200 transition-colors hover:border-copper/40 hover:text-copper-400"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             Back to Dashboard
