@@ -1,6 +1,6 @@
-# PayLock — Progress Tracker
+# Trellis — Progress Tracker
 
-## Overall Status: 🟢 Stage 1A Complete — Ready for Stage 1B Scope Review
+## Overall Status: 🟢 Stage 1B Complete — Ready for Stage 1C Scope Review
 
 ---
 
@@ -16,11 +16,11 @@
 - **Status:** ✅ Complete
 
 ### Stage 1B: ERC-8004 Registries
-- [ ] Adapt IdentityRegistry.sol from reference impl
-- [ ] Adapt ReputationRegistry.sol from reference impl
-- [ ] Adapt ValidationRegistry.sol from reference impl
-- [ ] Write unit tests for all 3 registries
-- **Status:** ⬜ Not Started
+- [x] `IIdentityRegistry.sol` + `IdentityRegistry.sol` (ERC-721URIStorage, multi-identity, O(1) active-arbiter list, ERC-8004 metadata)
+- [x] `IReputationRegistry.sol` + `ReputationRegistry.sol` (0–100 scale, `REPORTER_ROLE` gating, self-feedback guard, packed structs, paginated queries)
+- [x] `IValidationRegistry.sol` + `ValidationRegistry.sol` (validation requests, original-requester & arbiter operator auth, opaque zkML/TEE proof field)
+- [x] Unit tests for all 3 registries (`test/registries/`, 36 passing) + security code review completed
+- **Status:** ✅ Complete
 
 ### Stage 1C: Core Business Logic
 - [ ] Build ProjectManager.sol

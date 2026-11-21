@@ -1,7 +1,7 @@
 {
-  "name": "paylock-qday",
+  "name": "trellis-qday",
   "version": "0.1.0",
-  "description": "PayLock: Milestone-based stablecoin escrow with ERC-8004 identity, reputation, and AI arbiter dispute resolution on QDay Aevum",
+  "description": "Trellis: Quantum-safe milestone escrow with ERC-8004 identity, reputation, and AI arbiter dispute resolution on QDay Aevum",
   "type": "module",
   "private": true,
   "scripts": {
