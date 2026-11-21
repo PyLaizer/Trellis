@@ -8,6 +8,7 @@
     "compile": "hardhat compile",
     "test": "hardhat test",
     "clean": "hardhat clean",
+    "export-abis": "node --experimental-strip-types scripts/export-abis.ts",
     "deploy:aevum": "hardhat run scripts/deploy.ts --network aevum"
   },
   "devDependencies": {

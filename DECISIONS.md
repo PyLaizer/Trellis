@@ -28,3 +28,9 @@
 | 17 | 2026-11-21 | 3-arbiter panel (2-of-3 consensus) with conflict-of-interest guard | Pseudo-randomly selected from active ERC-8004 arbiters excluding Client & Freelancer owners | ✅ Approved |
 | 18 | 2026-11-21 | Auto-score arbiters in `ReputationRegistry` on consensus | Majority voters receive 100, dissenters receive 25 (tag `arbiter`); every vote & proof also stored in `ValidationRegistry` | ✅ Approved |
 | 19 | 2026-11-21 | Testnet dispute timing: `clientReviewPeriod = 300s` (5m), `votingPeriod = 3600s` (1h) | Demo-friendly on Aevum Testnet; admin-adjustable via `setTimingConfig` | ✅ Approved |
+| 20 | 2026-11-21 | Visual design system: **Option A — Quantum Lattice Dark** | Obsidian `#070B12` canvas, `#0E1525` surfaces, emerald `#10B981` + cyan `#22D3EE` accents, Space Grotesk / Inter / JetBrains Mono | ✅ Approved |
+| 21 | 2026-11-21 | Wallet UX: `wagmi` + `viem` + `@rainbow-me/rainbowkit` | Polished wallet modal + automatic QDay Aevum Testnet (`44005`) chain switcher | ✅ Approved |
+| 22 | 2026-11-21 | Automated ABI sync via `scripts/export-abis.ts` | Keeps `frontend/src/lib/contracts/` 100% synced with Hardhat artifacts & `deployments/aevum.json` | ✅ Approved |
+| 23 | 2026-11-21 | Dashboard is the landing page (`/`) | Judges & users land directly inside the live dApp with zero extra clicks (matches `Trellis Escrow Dashboard 2` Stitch design) | ✅ Approved |
+| 24 | 2026-11-21 | Interactive motion design via `framer-motion` | Sliding `layoutId` pills, cursor-tracking lattice glow, animated counters & milestone bars, `AnimatePresence` filter transitions, `reducedMotion="user"` | ✅ Approved |
+| 25 | 2026-11-21 | Feature branch `feat/stage-2a-frontend-scaffold` | Develop Stage 2A on a separate Git branch and merge into `main` after review | ✅ Approved |
