@@ -1,6 +1,6 @@
 # Trellis — Progress Tracker
 
-## Overall Status: 🟡 Stage 1E — In Progress (E2E Integration Tests + Deployment Script)
+## Overall Status: 🟢 Stage 2A Complete (`feat/stage-2a-frontend-scaffold`) — Ready for User Review & Stage 2B Scope Review
 
 ---
 
@@ -48,11 +48,12 @@
 ## Week 2: Frontend + Integration (Nov 27 – Dec 4)
 
 ### Stage 2A: Frontend Scaffold
-- [ ] Init Next.js project
-- [ ] Configure wagmi/viem for Aevum
-- [ ] Wallet connection (RainbowKit)
-- [ ] Layout & navigation
-- **Status:** ⬜ Not Started
+- [x] `scripts/export-abis.ts` exporting all 7 typed ABIs + addresses into `frontend/src/lib/contracts/`
+- [x] Next.js 15 App Router + TypeScript + Tailwind CSS + Framer Motion scaffold in `frontend/`
+- [x] wagmi / viem / RainbowKit configured for QDay Aevum Testnet (`44005`)
+- [x] Quantum Lattice Dark shell: Navbar (inline SVG logo, sliding `layoutId` pills, live `tUSD8`/`tQDAY` balances), Footer, interactive motion Dashboard (`/`) matching `Trellis Escrow Dashboard 2`, and 4 route shells (`/identity`, `/projects`, `/disputes`, `/reputation`)
+- [x] Verified clean production `npm run build` (0 TypeScript/lint errors)
+- **Status:** ✅ Complete (on branch `feat/stage-2a-frontend-scaffold`)
 
 ### Stage 2B: Identity & Profiles
 - [ ] Registration page (mint identity NFT)
