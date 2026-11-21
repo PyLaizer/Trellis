@@ -1,6 +1,6 @@
 # Trellis — Progress Tracker
 
-## Overall Status: 🟢 Stage 1C Complete — Ready for Stage 1D Scope Review
+## Overall Status: 🟢 Stage 1D Complete — Ready for Stage 1E Scope Review (Integration + Aevum Deployment)
 
 ---
 
@@ -30,11 +30,11 @@
 - **Status:** ✅ Complete
 
 ### Stage 1D: Dispute Resolution
-- [ ] Build DisputeResolution.sol
-- [ ] Arbiter assignment logic
-- [ ] Voting + consensus logic
-- [ ] Unit tests
-- **Status:** ⬜ Not Started
+- [x] `IDisputeResolution.sol` + `DisputeResolution.sol`
+- [x] Conflict-free 3-arbiter panel selection + `ValidationRegistry` integration (with M-2 mitigation & operator conflict-of-interest guard)
+- [x] 2-of-3 consensus voting, `VotingPeriodExpired` guard, deadline fallback, and non-blocking `try/catch` auto-reputation scoring
+- [x] Unit tests (`test/core/DisputeResolution.test.ts`, 16 new tests — 79 total passing) + security code review completed
+- **Status:** ✅ Complete
 
 ### Stage 1E: Integration Tests + Deployment
 - [ ] End-to-end test suite

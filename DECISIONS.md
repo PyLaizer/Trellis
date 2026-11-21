@@ -24,3 +24,6 @@
 | 13 | 2026-11-21 | Upfront full-project funding in `MilestoneEscrow` | All milestones locked on project creation; gives freelancers verifiable on-chain proof of funds before starting work | ✅ Approved |
 | 14 | 2026-11-21 | 1% protocol fee (100 bps, capped at 500 bps, 0% on refunds) | Demonstrates sustainable business model vs 20–30% centralized platforms; 0% fee on client refunds | ✅ Approved |
 | 15 | 2026-11-21 | Both open marketplace & direct hire in `ProjectManager` | `freelancerAgentId == 0` allows any active registered Freelancer to accept; `> 0` targets a specific Freelancer | ✅ Approved |
+| 16 | 2026-11-21 | Bilateral dispute initiation with client review window | Client can dispute `Submitted` or overdue `Pending`; Freelancer can dispute `Submitted` after configurable review window (default 3 days) | ✅ Approved |
+| 17 | 2026-11-21 | 3-arbiter panel (2-of-3 consensus) with conflict-of-interest guard | Pseudo-randomly selected from active ERC-8004 arbiters excluding Client & Freelancer owners | ✅ Approved |
+| 18 | 2026-11-21 | Auto-score arbiters in `ReputationRegistry` on consensus | Majority voters receive 100, dissenters receive 25 (tag `arbiter`); every vote & proof also stored in `ValidationRegistry` | ✅ Approved |
