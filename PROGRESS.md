@@ -1,6 +1,6 @@
 # Trellis — Progress Tracker
 
-## Overall Status: 🟢 Stage 1B Complete — Ready for Stage 1C Scope Review
+## Overall Status: 🟢 Stage 1C Complete — Ready for Stage 1D Scope Review
 
 ---
 
@@ -23,10 +23,11 @@
 - **Status:** ✅ Complete
 
 ### Stage 1C: Core Business Logic
-- [ ] Build ProjectManager.sol
-- [ ] Build MilestoneEscrow.sol
-- [ ] Full milestone lifecycle tests
-- **Status:** ⬜ Not Started
+- [x] `MockTUSD8.sol` (6 decimals) for local testing
+- [x] `IMilestoneEscrow.sol` + `MilestoneEscrow.sol` (upfront funding, SafeERC20, ReentrancyGuard, snapshotted 1% fee capped at 5%)
+- [x] `IProjectManager.sol` + `ProjectManager.sol` (open + direct hire, overdue-milestone dispute recovery, full lifecycle, bilateral reputation)
+- [x] Full milestone lifecycle tests (`test/core/`, 27 new tests — 63 total passing) + security code review completed
+- **Status:** ✅ Complete
 
 ### Stage 1D: Dispute Resolution
 - [ ] Build DisputeResolution.sol

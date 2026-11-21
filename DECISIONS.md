@@ -21,3 +21,6 @@
 | 10 | 2026-11-21 | IdentityRegistry allows multiple identity NFTs per wallet | Matches ERC-8004 standard; lets one wallet operate multiple AI arbiter agents or hold Client & Freelancer profiles | ✅ Approved |
 | 11 | 2026-11-21 | ReputationRegistry uses 0–100 score scale, gated to authorized Trellis contracts | Matches ERC-8004 convention; strongest Sybil resistance (only ProjectManager & DisputeResolution can record feedback) | ✅ Approved |
 | 12 | 2026-11-21 | TypeScript tests with viem + `node:test` | Exercises the exact ABI and viem client calls used by the Next.js frontend | ✅ Approved |
+| 13 | 2026-11-21 | Upfront full-project funding in `MilestoneEscrow` | All milestones locked on project creation; gives freelancers verifiable on-chain proof of funds before starting work | ✅ Approved |
+| 14 | 2026-11-21 | 1% protocol fee (100 bps, capped at 500 bps, 0% on refunds) | Demonstrates sustainable business model vs 20–30% centralized platforms; 0% fee on client refunds | ✅ Approved |
+| 15 | 2026-11-21 | Both open marketplace & direct hire in `ProjectManager` | `freelancerAgentId == 0` allows any active registered Freelancer to accept; `> 0` targets a specific Freelancer | ✅ Approved |
