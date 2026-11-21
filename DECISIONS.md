@@ -27,3 +27,4 @@
 | 16 | 2026-11-21 | Bilateral dispute initiation with client review window | Client can dispute `Submitted` or overdue `Pending`; Freelancer can dispute `Submitted` after configurable review window (default 3 days) | ✅ Approved |
 | 17 | 2026-11-21 | 3-arbiter panel (2-of-3 consensus) with conflict-of-interest guard | Pseudo-randomly selected from active ERC-8004 arbiters excluding Client & Freelancer owners | ✅ Approved |
 | 18 | 2026-11-21 | Auto-score arbiters in `ReputationRegistry` on consensus | Majority voters receive 100, dissenters receive 25 (tag `arbiter`); every vote & proof also stored in `ValidationRegistry` | ✅ Approved |
+| 19 | 2026-11-21 | Testnet dispute timing: `clientReviewPeriod = 300s` (5m), `votingPeriod = 3600s` (1h) | Demo-friendly on Aevum Testnet; admin-adjustable via `setTimingConfig` | ✅ Approved |

@@ -1,6 +1,6 @@
 # Trellis — Progress Tracker
 
-## Overall Status: 🟢 Stage 1D Complete — Ready for Stage 1E Scope Review (Integration + Aevum Deployment)
+## Overall Status: 🟡 Stage 1E — In Progress (E2E Integration Tests + Deployment Script)
 
 ---
 
@@ -37,10 +37,11 @@
 - **Status:** ✅ Complete
 
 ### Stage 1E: Integration Tests + Deployment
-- [ ] End-to-end test suite
-- [ ] Deploy to Aevum Testnet
-- [ ] Verify contracts on explorer
-- **Status:** ⬜ Not Started
+- [x] End-to-end integration test suite (`test/integration/TrellisE2E.test.ts` — 82 total passing)
+- [x] Deployment script (`scripts/deploy.ts`) verified via local dry-run with full role wiring & manifest export
+- [ ] Deploy to QDay Aevum Testnet *(ready — awaiting user `.env` + `tQDAY` faucet confirmation)*
+- [ ] Verify contracts on Aevum explorer
+- **Status:** 🟡 Ready for Aevum Testnet Deployment
 
 ---
 
