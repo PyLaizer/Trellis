@@ -1,6 +1,6 @@
 # Trellis — Progress Tracker
 
-## Overall Status: 🟢 Stage 2B Complete (`feat/stage-2b-identity-page`) — Ready for User Review & Stage 2C (`/projects`)
+## Overall Status: 🟢 Stage 2B Merged into `main` — Ready for Stage 2C (`/projects`)
 
 ---
 
@@ -61,7 +61,7 @@
 - [x] Minted Passports vault (`setActive` toggle, `setAgentURI` modal, `setMetadata` modal, `ReputationRegistry.getSummary` score bars)
 - [x] Active AI Arbiter Pool directory (`getActiveArbiters()`) + Agent Card inspector modal
 - [x] Verified clean `npm run build` on `feat/stage-2b-identity-page` (0 TypeScript/lint errors)
-- **Status:** ✅ Complete (on branch `feat/stage-2b-identity-page`)
+- **Status:** ✅ Complete & merged into `main`
 
 ### Stage 2C: Project Flow
 - [ ] Create project form
