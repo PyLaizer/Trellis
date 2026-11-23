@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState, type FormEvent } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useMemo, useState, type FormEvent, type MouseEvent } from "react";
+import { AnimatePresence, motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import {
   AlertCircle,
   ArrowUpRight,
@@ -768,19 +768,32 @@ export function IdentityClient() {
 
   const isTxBusy = isWritePending || isConfirming;
 
+  // Cursor-tracking Copper & Ice radial spotlight matching the Dashboard hero
+  const headerMouseX = useMotionValue(320);
+  const headerMouseY = useMotionValue(90);
+  const headerSpotlight = useMotionTemplate`radial-gradient(460px circle at ${headerMouseX}px ${headerMouseY}px, rgba(234, 122, 61, 0.14), rgba(56, 189, 248, 0.08) 42%, transparent 72%)`;
+
+  function handleHeaderMouseMove(event: MouseEvent<HTMLElement>) {
+    const rect = event.currentTarget.getBoundingClientRect();
+    headerMouseX.set(event.clientX - rect.left);
+    headerMouseY.set(event.clientY - rect.top);
+  }
+
   return (
     <div className="mx-auto max-w-[1400px] space-y-6 px-4 pt-6 sm:px-6 lg:px-8">
       {/* 1. Compact Page Header Strip */}
       <motion.section
+        onMouseMove={handleHeaderMouseMove}
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="lattice-bg relative overflow-hidden rounded-2xl border border-hairline bg-surface/95 p-6 sm:p-7"
       >
-        {/* Subtle Copper & Ice radial accent */}
-        <div
+        {/* Cursor-tracking Copper & Ice radial lattice spotlight */}
+        <motion.div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(520px_circle_at_12%_10%,rgba(56,189,248,0.11),transparent_60%),radial-gradient(460px_circle_at_90%_85%,rgba(234,122,61,0.11),transparent_62%)]"
+          className="pointer-events-none absolute inset-0"
+          style={{ background: headerSpotlight }}
         />
 
         <div className="relative z-10 flex flex-col justify-between gap-5 lg:flex-row lg:items-center">
