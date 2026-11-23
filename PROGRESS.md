@@ -1,6 +1,6 @@
 # Trellis — Progress Tracker
 
-## Overall Status: 🟢 Stage 2C Complete (`feat/stage-2c-projects-page`) — Ready for User Review & Stage 2D (`/projects/[id]`)
+## Overall Status: 🟢 Stage 2C Merged into `main` — Ready for Stage 2D (`/projects/[id]`)
 
 ---
 
@@ -69,7 +69,7 @@
 - [x] Sticky Create Escrow Project builder (dynamic milestones up to 20, live upfront lock & 1% fee summary, 2-step `tUSD8.approve` → `ProjectManager.createProject`)
 - [x] Live wagmi hooks (`ProjectManager`, `MilestoneEscrow`, `tUSD8`, `IdentityRegistry`) + Interactive Preview Mode
 - [x] Verified clean `npm run build` on `feat/stage-2c-projects-page` (0 TypeScript/lint errors)
-- **Status:** ✅ Complete (on branch `feat/stage-2c-projects-page`)
+- **Status:** ✅ Complete & merged into `main`
 
 ### Stage 2D: Milestone Management
 - [ ] Freelancer deliverable submission
