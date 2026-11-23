@@ -1,6 +1,6 @@
 # Trellis — Progress Tracker
 
-## Overall Status: 🟢 Stage 2A Merged into `main` — Ready for Stage 2B (`/identity`) & Aevum Testnet Deploy
+## Overall Status: 🟢 Stage 2B Complete (`feat/stage-2b-identity-page`) — Ready for User Review & Stage 2C (`/projects`)
 
 ---
 
@@ -56,10 +56,12 @@
 - **Status:** ✅ Complete & merged into `main` (Copper & Ice theme applied)
 
 ### Stage 2B: Identity & Profiles
-- [ ] Registration page (mint identity NFT)
-- [ ] Profile view
-- [ ] Agent Card upload to IPFS
-- **Status:** ⬜ Not Started
+- [x] Agent Card JSON builder (`data:application/json;base64,...` + custom IPFS/HTTPS URI support) in `frontend/src/lib/agentCard.ts`
+- [x] Registration studio (`IdentityRegistry.register` for Client / Freelancer / AI Arbiter) with live ERC-8004 JSON preview
+- [x] Minted Passports vault (`setActive` toggle, `setAgentURI` modal, `setMetadata` modal, `ReputationRegistry.getSummary` score bars)
+- [x] Active AI Arbiter Pool directory (`getActiveArbiters()`) + Agent Card inspector modal
+- [x] Verified clean `npm run build` on `feat/stage-2b-identity-page` (0 TypeScript/lint errors)
+- **Status:** ✅ Complete (on branch `feat/stage-2b-identity-page`)
 
 ### Stage 2C: Project Flow
 - [ ] Create project form

@@ -35,3 +35,4 @@
 | 24 | 2026-11-21 | Interactive motion design via `framer-motion` | Sliding `layoutId` pills, cursor-tracking lattice glow, animated counters & milestone bars, `AnimatePresence` filter transitions, `reducedMotion="user"` | ✅ Approved |
 | 25 | 2026-11-21 | Feature branch `feat/stage-2a-frontend-scaffold` | Develop Stage 2A on a separate Git branch and merge into `main` after review | ✅ Approved |
 | 26 | 2026-11-21 | Brand palette updated to **Copper & Ice** (`#EA7A3D` Burnished Copper + `#38BDF8` Ice Blue) | Replaces generic DeFi emerald with a rare, architectural vault/trellis identity; previewing on Stitch before updating code | ✅ Approved |
+| 27 | 2026-11-23 | Auto-Build Agent Cards encoded as `data:application/json;base64,...` (+ Custom IPFS/HTTPS option) | Zero external API keys required, 100% self-contained on-chain, instant decode; still supports `ipfs://` and `https://` URIs | ✅ Approved |
