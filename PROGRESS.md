@@ -1,6 +1,6 @@
 # Trellis — Progress Tracker
 
-## Overall Status: 🟢 Stage 2E Complete (`feat/stage-2e-disputes-page`) — Ready for User Review & Stage 2F (`/reputation`)
+## Overall Status: 🟢 Stage 2E Merged into `main` — Ready for Stage 2F (`/reputation`)
 
 ---
 
@@ -85,7 +85,7 @@
 - [x] `DisputesClient.tsx` + `/disputes/page.tsx` (Active Dispute Tribunal, 2-of-3 Quorum Consensus Meter, live countdown, 3-column AI Arbiter panel, Cast Verdict form, Past Resolved Disputes table)
 - [x] Live wagmi hooks (`DisputeResolution`, `ValidationRegistry`, `IdentityRegistry`) + Interactive Preview Mode
 - [x] Verified clean `npm run build` on `feat/stage-2e-disputes-page` (0 TypeScript/lint errors)
-- **Status:** ✅ Complete (on branch `feat/stage-2e-disputes-page`)
+- **Status:** ✅ Complete & merged into `main`
 
 ### Stage 2F: Reputation Dashboard
 - [ ] View ratings
