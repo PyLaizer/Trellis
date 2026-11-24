@@ -1,6 +1,6 @@
 # Trellis — Progress Tracker
 
-## Overall Status: 🟢 Stage 2D Complete (`feat/stage-2d-project-workspace`) — Ready for User Review & Stage 2E (`/disputes`)
+## Overall Status: 🟢 Stage 2D Merged into `main` — Ready for Stage 2E (`/disputes`)
 
 ---
 
@@ -77,7 +77,7 @@
 - [x] Vault Proof & AI Arbitration Rules sidebar + On-Chain Timeline + Client/Freelancer perspective switcher
 - [x] Live wagmi hooks (`ProjectManager`, `MilestoneEscrow`, `DisputeResolution`, `ReputationRegistry`) + Interactive Preview Mode
 - [x] Verified clean `npm run build` on `feat/stage-2d-project-workspace` (0 TypeScript/lint errors)
-- **Status:** ✅ Complete (on branch `feat/stage-2d-project-workspace`)
+- **Status:** ✅ Complete & merged into `main`
 
 ### Stage 2E: Dispute & Arbitration
 - [ ] Dispute filing UI
