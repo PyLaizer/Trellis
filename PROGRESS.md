@@ -1,6 +1,6 @@
 # Trellis — Progress Tracker
 
-## Overall Status: 🟢 Stage 2C Merged into `main` — Ready for Stage 2D (`/projects/[id]`)
+## Overall Status: 🟢 Stage 2D Complete (`feat/stage-2d-project-workspace`) — Ready for User Review & Stage 2E (`/disputes`)
 
 ---
 
@@ -72,10 +72,12 @@
 - **Status:** ✅ Complete & merged into `main`
 
 ### Stage 2D: Milestone Management
-- [ ] Freelancer deliverable submission
-- [ ] Client review/approve UI
-- [ ] tUSD8 release flow
-- **Status:** ⬜ Not Started
+- [x] Dynamic workspace route (`frontend/src/app/projects/[id]/page.tsx`) + `ProjectWorkspaceClient.tsx`
+- [x] Interactive milestone modals (`SubmitDeliverableModal`, `ApproveMilestoneModal`, `OpenDisputeModal`, `RateCounterpartyModal`)
+- [x] Vault Proof & AI Arbitration Rules sidebar + On-Chain Timeline + Client/Freelancer perspective switcher
+- [x] Live wagmi hooks (`ProjectManager`, `MilestoneEscrow`, `DisputeResolution`, `ReputationRegistry`) + Interactive Preview Mode
+- [x] Verified clean `npm run build` on `feat/stage-2d-project-workspace` (0 TypeScript/lint errors)
+- **Status:** ✅ Complete (on branch `feat/stage-2d-project-workspace`)
 
 ### Stage 2E: Dispute & Arbitration
 - [ ] Dispute filing UI
