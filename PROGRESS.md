@@ -1,6 +1,6 @@
 # Trellis — Progress Tracker
 
-## Overall Status: 🟢 Stage 2F Complete (`feat/stage-2f-reputation-page`) — Entire Week 2 Frontend Built! Ready for Review & Week 3
+## Overall Status: 🟢 Week 2 Complete & Merged into `main` — Ready for Aevum Testnet Deploy & Week 3 (AI Arbiter Demo, Docs, Docker & Submission)
 
 ---
 
@@ -92,7 +92,7 @@
 - [x] `ReputationClient.tsx` + `/reputation/page.tsx` (Top Verified Agents Leaderboard with animated SVG trust rings, agent drill-down, paginated Immutable Feedback Feed, Validation Proofs Log with `ProofInspectorModal` & `.json` Proof Bundle download)
 - [x] Live wagmi hooks (`ReputationRegistry`, `ValidationRegistry`, `IdentityRegistry`) + Interactive Preview Mode
 - [x] Verified clean `npm run build` on `feat/stage-2f-reputation-page` (0 TypeScript/lint errors across all 6 routes)
-- **Status:** ✅ Complete (on branch `feat/stage-2f-reputation-page`)
+- **Status:** ✅ Complete & merged into `main`
 
 ---
 
