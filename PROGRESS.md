@@ -1,6 +1,6 @@
 # Trellis — Progress Tracker
 
-## Overall Status: 🟢 Stage 2E Merged into `main` — Ready for Stage 2F (`/reputation`)
+## Overall Status: 🟢 Stage 2F Complete (`feat/stage-2f-reputation-page`) — Entire Week 2 Frontend Built! Ready for Review & Week 3
 
 ---
 
@@ -88,10 +88,11 @@
 - **Status:** ✅ Complete & merged into `main`
 
 ### Stage 2F: Reputation Dashboard
-- [ ] View ratings
-- [ ] Reputation history
-- [ ] Profile completeness
-- **Status:** ⬜ Not Started
+- [x] Typed reputation profiles, feedback records, and validation log dataset (`frontend/src/lib/mockReputationData.ts`)
+- [x] `ReputationClient.tsx` + `/reputation/page.tsx` (Top Verified Agents Leaderboard with animated SVG trust rings, agent drill-down, paginated Immutable Feedback Feed, Validation Proofs Log with `ProofInspectorModal` & `.json` Proof Bundle download)
+- [x] Live wagmi hooks (`ReputationRegistry`, `ValidationRegistry`, `IdentityRegistry`) + Interactive Preview Mode
+- [x] Verified clean `npm run build` on `feat/stage-2f-reputation-page` (0 TypeScript/lint errors across all 6 routes)
+- **Status:** ✅ Complete (on branch `feat/stage-2f-reputation-page`)
 
 ---
 
